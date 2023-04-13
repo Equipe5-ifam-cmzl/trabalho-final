@@ -8,16 +8,16 @@
 
 ## Checklist
 
-- [] Testes relacionados a Regressão Linear
+- [x] Testes relacionados a Regressão Linear
 
-- [] Testes relacionados a Regressão Logistica
+- [x] Testes relacionados a Regressão Logistica
 
-- [] Testes relacionados ao SVM
+- [x] Testes relacionados ao SVM
 
-- [] Testes relacionadoso KNN
+- [x] Testes relacionadoso KNN
 
 - [] Testes relacionados a Rede Neural Artificial
 
-- [] Testes relacionados a Árvore de Decisão
+- [x] Testes relacionados a Árvore de Decisão
 
-- [] Testes relacionados a Random Forest
+- [x] Testes relacionados a Random Forest
