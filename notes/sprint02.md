@@ -16,7 +16,7 @@
 
 - [x] Testes relacionadoso KNN
 
-- [] Testes relacionados a Rede Neural Artificial
+- [x] Testes relacionados a Rede Neural Artificial
 
 - [x] Testes relacionados a Árvore de Decisão
 

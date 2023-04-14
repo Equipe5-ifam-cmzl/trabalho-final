@@ -1,4 +1,4 @@
 git add -A
-git commit -m "(resolver) sprint 02 -> Rede Neural Artificial"
+git commit -m "sprint 02 -> feita"
 git push -u origin main
 git status
