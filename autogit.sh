@@ -1,4 +1,4 @@
 git add -A
-git commit -m "sprint 02 -> feita | Naive Bays -> add"
+git commit -m "add: improvements -> DecisionTree & RandomForest"
 git push -u origin main
 git status
