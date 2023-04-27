@@ -1,4 +1,4 @@
 git add -A
-git commit -m "add: improvements -> DecisionTree & RandomForest"
+git commit -m "improvements -> graphviz on Decision Tree"
 git push -u origin main
 git status
