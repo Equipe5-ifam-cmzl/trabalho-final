@@ -1,4 +1,4 @@
 git add -A
-git commit -m "Add: activities -> atv 06 - KNN"
+git commit -m "sprint03: DecisionTree.ipynb -> melhorando"
 git push -u origin main
 git status
