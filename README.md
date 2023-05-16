@@ -9,7 +9,7 @@ E SUPONDO que você já instalou o virtualenv na sua máquina, execute os seguin
 1. Para gerar um ambiente virtual:
 
 ```shell
-$ python -m vitualenv venv
+$ python -m virtualenv venv
 ```
 
 (OBS.: a palavra 'venv' é o nome da pasta onde seu ambiente virtual estará hospedado, pode mudar se quiser!)
@@ -18,6 +18,12 @@ $ python -m vitualenv venv
 
 ```shell
 $ source venv/Scripts/activate
+```
+
+ou (em alguns casos, pode ser que você tenha que executar o comando abaixo)
+
+```shell
+$ source venv/bin/activate
 ```
 
 3. Com isso, você poderá baixar as libs com o seguinte comando:
