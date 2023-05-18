@@ -7,7 +7,7 @@ E SUPONDO que você já instalou o virtualenv na sua máquina, execute os seguin
 1. Para gerar um ambiente virtual:
 
 ```shell
-$ python -m vitualenv venv
+$ python -m virtualenv venv
 ```
 
 (OBS.: a palavra 'venv' é o nome da pasta onde seu ambiente virtual estará hospedado, pode mudar se quiser!)
