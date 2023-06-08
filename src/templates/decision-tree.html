@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,21 +12,26 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <py-repl id="my-repl" auto-generate=true> </py-repl>
 </head>
+
 <body>
     <py-env>
-    - scikit-learn
+        - scikit-learn
     </py-env>
-    
+
     <py-config>
         packages = ["matplotlib", "pandas", "numpy", "scikit-learn", "seaborn"]
     </py-config>
 
-    <py-script>
+    <py-repl>
         import pandas as pd
         import numpy as np
 
         from pyodide.http import open_url
+    </py-repl>
 
+    <br>
+
+    <py-repl>
         # 1 - Importar libs e dataset
         link = ("https://raw.githubusercontent.com/Equipe5-ifam-cmzl/trabalho-final/main/database/result.csv")
         dataset = pd.read_csv(open_url(link))
@@ -34,7 +40,11 @@
         featureNames = ['risk_score', 'amount_requested', 'has_debt', 'income']
         X = dataset.drop(['e_signed'], axis=1)
         y = dataset['e_signed']
+    </py-repl>
 
+    <br>
+
+    <py-repl>
         # 3 - Dividindo os dados de treino e teste
         from sklearn.model_selection import train_test_split as tts
         X_train, X_test, y_train, y_test = tts(X, y, test_size=0.3, random_state=0)
@@ -42,36 +52,55 @@
         # 4 - Definindo classificador (Com valores padrão)
         from sklearn.tree import DecisionTreeClassifier
         model = DecisionTreeClassifier()
+    </py-repl>
 
+    <br>
+
+    <py-repl>
         # 5 - TREINO
         model.fit(X_train, y_train)
         model.score(X_train, y_train)
+    </py-repl>
 
+    <br>
+
+    <py-repl>
         # 6 - TESTE
         model.fit(X_test, y_test)
         model.score(X_test, y_test)
+    </py-repl>
 
+    <br>
+
+    <py-repl>
         # 7 - Resultado
 
         predictions = model.predict(X_test)
-        score = model.score(X_test, y_test)
+        model.score(X_test, y_test)
+    </py-repl>
 
+    <br>
+
+    <py-repl>
         # Testando valores de hiperparâmetros
 
         # Melhor resultado obtido: [max_depth=1000, min_samples_split=10]
         model = DecisionTreeClassifier(
-            criterion='entropy', 
-            splitter="best", 
-            max_depth=1000, 
+            criterion='entropy',
+            splitter="best",
+            max_depth=1000,
             min_samples_split=10
         )
 
         # TREINO
         model.fit(X_train, y_train)
-        train_score = model.score(X_train, y_train)
-    </py-script>
+        model.score(X_train, y_train)
+    </py-repl>
 
-    <py-script>
+    <br>
+
+    <py-repl>
+        # Prod. Imagem
         from sklearn.tree import plot_tree
         import matplotlib.pyplot as plt
 
@@ -80,32 +109,22 @@
             criterion="entropy",
             max_depth=1000,
             min_samples_split=10
-        ).fit(
-            X_train[0:200], 
-            y_train[0:200]
-        )
+            ).fit(
+                X_train[0:200],
+                y_train[0:200]
+            )
 
         plot_tree(model, filled=True)
-        
+
         plt.title("Árvore de Decisão Treinada - 150 Primeiros dados")
-        plotTree = plt.show()
-        # Plotagem da árvore -> NOT WORK 
-    </py-script>
-
-    <py-repl>
-        dataset
+        plt.show()
+        # Plotagem da árvore -> NOT WORK
     </py-repl>
 
+    <br>
+    
     <py-repl>
-        score
-    </py-repl>
-
-    <py-repl>
-        train_score
-    </py-repl>
-
-    <py-repl>
-        # 2. Matrix de Confusão -> NOT WORK 
+        # 2. Matrix de Confusão -> NOT WORK
 
         from sklearn.metrics import classification_report, confusion_matrix
         import seaborn as sns
@@ -113,8 +132,8 @@
         confMatrix = confusion_matrix(y_test, predictions)
 
         sns \
-            .heatmap(confMatrix, annot=True, fmt='d') \
-            .set_title('Results in confusion matrix')
+        .heatmap(confMatrix, annot=True, fmt='d') \
+        .set_title('Results in confusion matrix')
 
         print(classification_report(y_test, predictions))
     </py-repl>
