@@ -1,0 +1,3 @@
+Ocorreu um equivoco da minha parte!
+
+Esse tempo todo, estive treinando o modelo com os dados de treino e teste em sequência, o que acaba gerando overfitting no modelo, e elevada acurácia!
